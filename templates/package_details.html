@@ -1,0 +1,29 @@
+{%extends 'base.html' %}
+
+{%block body%}
+<div class="container pack-det-container text-white">
+    <h1 class="text-center my-4">{{package.name}}</h1>
+    <div class="pack-det-info d-flex justify-content-evenly">
+        <div class="d-flex flex-column align-items-center">
+            <img src="{{package.cover.url}}" alt="" class="package-img">
+            <div>
+                <a href="{%url 'book_package' package.id %}" class="btn btn-primary btn-lg my-5">Book Package</a>
+                <a href="{% url 'review' package.id %}" class="btn btn-warning btn-lg my-5">Check Review</a>
+                <a href="{% url 'add_review' package.id %}" class="btn btn-secondary btn-lg my-5">Add Review</a>
+            </div>
+        </div>
+        <div class="pack-det-inner">
+            <h2>Informations:</h2>
+            <h4>From {{package.source}} To {{package.destination}}</h4>
+            <h3>Duration: {{package.duration}}</h3>
+            <h4>Plans:</h4>
+            <p>{{package.plan}}</p>
+            <h3>Price: {{package.price}}Tk</h3>
+            <h4>Terms & Conditions:</h4>
+            <p>{{package.terms}}</p>
+            
+        </div>
+    </div>
+    
+</div>
+{%endblock body%}

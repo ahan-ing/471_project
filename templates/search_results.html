@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block title %}Search Results{% endblock title %}
+{% block body %}
+{% if no_results_msg %}
+<p>{{ no_results_msg }}</p>
+{% else %}
+<div class="container">
+    {% for package in tour_packages %}
+    <div class="card shadow-sm my-2" style="width:25vw">
+        <img src="{{package.cover.url}}" class="img-fluid" alt="..." style="width:2000px;height:200px;">
+        <div class="card-body">
+            <p class="card-text">{{package.name}} <br> Price: {{package.price}}</p>
+            <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                    <a href="{%url 'package_details' package.id%}" class="btn btn-success">Details</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+{% endif %}
+
+{% endblock body %}

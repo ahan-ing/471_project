@@ -1,0 +1,17 @@
+{%extends 'base.html'%}
+
+{%block body%}
+<div class="conatainer mx-auto w-50 d-flex flex-column align-items-center bg-warning my-2 py-5 rounded">
+    {%if messages%}
+    {%for message in messages%}
+    <h1 class="text-center bg-{{message.tags}}">{{message}}</h1>
+    {%endfor%}
+    {%endif%}
+    <form class="w-75" action="" method="post" enctype="multipart/form-data">
+        {%csrf_token%}
+        {{form.as_p}}
+        <button class="btn btn-secondary btn-lg" type="submit">Add</button>
+    </form>
+</div>
+
+{%endblock body%}

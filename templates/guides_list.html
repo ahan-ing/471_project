@@ -1,0 +1,26 @@
+{%extends 'base.html'%}
+
+{% block body %}
+<table class="table table-striped table-dark">
+    <thead>
+      <tr>
+        <th scope="col">Count</th>
+        <th scope="col">Name</th>
+        <th scope="col">Phone</th>
+        <th scope="col">Area</th>
+        <th scope="col">Modify</th>
+      </tr>
+    </thead>
+    <tbody>
+        {%for guide in guides%}
+      <tr>
+        <th scope="row">{{forloop.counter}}</th>
+        <td>{{guide.name}}</td>
+        <td>{{guide.phone}}</td>
+        <td>{{guide.place.name}}</td>
+        <td><a class="btn btn-danger btn-sm" href="{% url 'delete_guide' guide.id %}">Delete</a></td>
+      </tr>
+      {%endfor%}
+    </tbody>
+  </table>
+{% endblock body %}

@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<img src="/static/1.jpg" class="img-fluid" alt="..." style="width:100vw;height:50vh;">
+<h3 style="
+position: absolute;
+top: 140px;
+left:30vw;
+font-size: -webkit-xxx-large;
+color:  darkkhaki;font-style: italic;"> EXPLORE NEW PLACES</h3>
+
+<h3 style="
+position: absolute;top: auto;left: 500px;font-size: xx-large;color: black;padding-top: 37px;font-style: italic;">
+  Available Packages </h3>
+<h3> </h3>
+<form method="post" action="{% url 'search_tour_packages' %}" style="
+padding: 24px;
+padding-top: 38px;
+padding-left: 42px;
+position: rigt;
+">
+  {% csrf_token %}
+  {{ form.as_p }}
+
+
+  <button type="submit" class="btn btn-info">Filter Packages </button>
+
+</form>
+<div class="container-fluid pack-container" style="padding-top: 75px;">
+  {%for package in packages%}
+  <div class="card shadow-sm my-2" style="width:25vw">
+    <img src="{{package.cover.url}}" class="img-fluid" alt="..." style="width:2000px;height:200px;">
+    <div class="card-body">
+      <p class="card-text">{{package.name}} <br> Price: {{package.price}}</p>
+      <div class="d-flex justify-content-between align-items-center">
+        <div class="btn-group">
+          <a href="{%url 'package_details' package.id%}" class="btn btn-success">Details</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  {%endfor%}
+</div>
+{% endblock body %}

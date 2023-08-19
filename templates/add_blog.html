@@ -1,0 +1,12 @@
+{%extends 'base.html' %}
+
+{% block body%}
+<div class="container">
+    <form action="" method="post" enctype ="multipart/form-data">
+        {%csrf_token%}
+        {{form.as_p}}
+        <button type="submit" class="btn btn-primary btn-lg">Upload</button>
+    </form>
+</div>
+
+{% endblock body%}

@@ -1,0 +1,17 @@
+{%extends 'base.html' %}
+{% load filters %}
+
+{% block body%}
+<div class="container d-flex">
+    {%for place in places%}
+    <div class="card m-2" style="width: 25rem;">
+        <img class="card-img-top" src="{{place.cover.url}}" alt="Card image cap">
+        <div class="card-body">
+            <h5 class="card-title">{{place.name}}</h5>
+            <p class="card-text">{{place.description|words}}....</p>
+            <a href="{%url 'place_details' place.id %}" class="btn btn-primary">Place Details</a>
+        </div>
+    </div>
+    {%endfor%}
+</div>
+{% endblock body%}

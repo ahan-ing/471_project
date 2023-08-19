@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block title %}Review{% endblock title %}
+{% block body %}
+<div class="my-3 review-container">
+    {%for review in reviews%}
+    <div class="card mt-5" style="width: 35rem;">
+        <div class="card-body">
+            <h5 class="card-title">Reviewed By {{review.user.username}}</h5>
+            <h6 class="card-subtitle mb-2 text-muted">Rating {{review.rating}} out of 5</h6>
+            <p class="card-text">{{review.comment}}</p>
+            
+        </div>
+    </div>
+    {%endfor%}
+</div>
+{% endblock body %}

@@ -1,0 +1,23 @@
+{%extends 'base.html' %}
+
+
+{%block body%}
+<div class="container my-3">
+
+    {%for blog in blogs%}
+    <div class="my-2" style="background-color: gray; height: 10vh;">
+        <div class="text-white" style="display: flex; justify-content: space-around; align-items: center; height: 10vh;">
+            <h4 class="video-title" >
+                <a style=" text-decoration: none; color: white;" href="{% url 'play_blog' blog.id %}">{{blog.title}}</a>
+            </h4>
+            <h5>Uploaded By {{blog.author_name}}</h5>
+            <h5>Upload Date {{blog.upload_date}}</h5>
+            <a href="{% url 'approved_blogs' blog.id %}" class="btn btn-success btn-sm">Approve</a>
+        </div>
+    </div>
+    {%endfor%}
+    </ol>
+</div>
+
+
+{%endblock body%}

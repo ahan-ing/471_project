@@ -1,0 +1,12 @@
+{%extends 'base.html'%}
+
+{%block body%}
+<div class="container">
+    <form action="" method="post" class="w-50 d-flex flex-column justify-content-center" enctype="multipart/form-data">
+        {{forms.errors}}
+        {%csrf_token%}
+        {{form.as_p}}
+        <button type="submit" class="btn btn-warning btn-md w-25"> Rgister </button>
+    </form>
+</div>
+{%endblock body%}

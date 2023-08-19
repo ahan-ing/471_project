@@ -1,0 +1,11 @@
+{%extends 'base.html' %}
+
+
+{%block body%}
+<div class="container">
+    <h1 class="text-white my-4">Now Playing {{blog.title}}</h1>
+    <video style="height: 75vh;" src="{{blog.video.url}}" controls type="video/mp4"></video>
+</div>
+
+
+{%endblock body%}
