@@ -136,7 +136,7 @@ def search_tour_packages(request):
                     None, "Minimum price must be less than or equal to the maximum price.")
             else:
                 # Perform the database query to find tour packages within the desired price range
-                tour_packages = Place.objects.filter(
+                tour_packages = Package.objects.filter(
                     price__gte=min_price, price__lte=max_price)
                 if tour_packages.exists():
                     return render(request, 'search_results.html', {'tour_packages': tour_packages})

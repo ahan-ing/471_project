@@ -22,14 +22,12 @@ urlpatterns = [
     path('book-now', views.book_now, name='book_now'),
     path('confirmation.html', views.confirmation_view, name='confirmation'),
 
-    path('ticket', views.ticket,name='ticket'),
+    
 
     path('', search_tour_packages, name='homepage'),
     path('package/search/', search_tour_packages, name='search_tour_packages'),
 
 
-
-    #Newwwwww
     path('search/', views.search, name='search'), 
     path('place/<int:id>/', views.place_details, name='place_details'),
     path('division/<int:id>/', views.divison_details, name='division_details'),
@@ -48,7 +46,6 @@ urlpatterns = [
 
 
 
-    #path('add_review/<str:package_name>/', views.add_review, name='add_review'),
 
 ]
 

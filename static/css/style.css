@@ -9,7 +9,7 @@
 }
 
 .menu-dropdown-item:hover {
-    background-color: orange;
+    background-color: rgb(2, 12, 63);
     color: white;
     font-size: 18px;
     font-weight: bold;

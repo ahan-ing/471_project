@@ -50,6 +50,8 @@ class Place(models.Model):
 class PlaceCulture(models.Model):
     place = models.ForeignKey(Place, on_delete=models.CASCADE)
     photo = models.ImageField(null=True, upload_to="placeimage/")
+    description = models.TextField(null=True)
+
 
     def __str__(self):
         return self.place.name
@@ -77,8 +79,6 @@ class PlaceVideo(models.Model):
 class Hotel(models.Model):
     place = models.ForeignKey(Place, on_delete=models.CASCADE, null=True)
     name = models.CharField(max_length=100, null=True)
-    description = models.CharField(max_length=255, null=True)
-    address = models.CharField(max_length=255, null=True)
     contact = models.CharField(max_length=50, null=True)
     website = models.URLField(null=True)
 
