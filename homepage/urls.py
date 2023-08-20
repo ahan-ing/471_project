@@ -45,8 +45,6 @@ urlpatterns = [
     path("approved/blogs/<int:id>", views.approved_blog, name = "approved_blogs")
 
 
-
-
 ]
 
 

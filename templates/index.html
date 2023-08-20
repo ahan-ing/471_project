@@ -1,14 +1,53 @@
 {% extends 'base.html' %}
 
 {% block body %}
-<img src="/static/1.jpg" class="img-fluid" alt="..." style="width:100vw;height:50vh;">
+
+
+<div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="/static/1.jpg"  class="img-fluid" alt="..." style="width:100vw;height:90vh;filter: blur(2px);">
+    </div>
+    <div class="carousel-item">
+      <img src="/static/2.jpg"  class="img-fluid" alt="..." style="width:100vw;height:90vh;filter: blur(2px);">
+    </div>
+    <div class="carousel-item">
+      <img src="/static/3.jpg"  class="img-fluid" alt="..." style="width:100vw;height:90vh;filter: blur(2px);">
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+
+
+
+
 <h3 style="
 position: absolute;
 top: 140px;
 left:30vw;
 font-size: -webkit-xxx-large;
-color:  darkkhaki;font-style: italic;"> EXPLORE NEW PLACES</h3>
+color:  wheat;font-style: italic;"> EXPLORE NEW PLACES</h3>
 
+<h3 style="
+position: absolute;
+top: 400px;
+left:30vw;
+font-size: -webkit-xxx-large;
+color:  wheat;font-style: italic;"> <a href="#availablepackage" class="d-inline-flex focus-ring py-1 px-2 text-decoration-none border rounded-2" style="--bs-focus-ring-x: 5px; --bs-focus-ring-y: 10px; --bs-focus-ring-blur: 4px ;color: darkkhaki">
+  AVAILABLE PACKAGES
+</a></h3>
+
+
+
+
+<section class ="Available-package" id='availablepackage'>
 <h3 style="
 position: absolute;top: auto;left: 500px;font-size: xx-large;color: black;padding-top: 37px;font-style: italic;">
   Available Packages </h3>
@@ -34,11 +73,12 @@ position: rigt;
       <p class="card-text">{{package.name}} <br> Price: {{package.price}}</p>
       <div class="d-flex justify-content-between align-items-center">
         <div class="btn-group">
-          <a href="{%url 'package_details' package.id%}" class="btn btn-success">Details</a>
+          <a href="{%url 'package_details' package.id%}" class="btn btn-info">Details</a>
         </div>
       </div>
     </div>
   </div>
   {%endfor%}
 </div>
+</section>
 {% endblock body %}

@@ -120,8 +120,7 @@ def confirmation_view(request):
     return render(request, 'confirmation.html')
 
 
-def ticket(request):
-    return render(request, 'ticket.html')
+
 
 
 def search_tour_packages(request):

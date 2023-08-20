@@ -5,20 +5,23 @@
 <div class="container my-3">
 
     {%for blog in blogs%}
-    <div class="video-div my-2">
-        <div class="video-info-div text-white">
+    <div class="video-div my-2" style ="height: 12rem;">
+        <div class="video-info-div text-white mt-2">
 
-            <h4 class="video-title" style="width: 150px;">
-                <a style=" text-decoration: none; color: white;" href="{% url 'play_blog' blog.id %}">{{blog.title}}</a>
-            </h4>
-            <h5>Uploaded By {{blog.author_name}}</h5>
-            <h5>Upload Date {{blog.upload_date}}</h5>
+    <h4 class="video-title" style="width: 150px;">
+        <a style=" text-decoration: none; color: white;" href="{% url 'play_blog' blog.id %}">{{blog.title}}</a>
+    </h4>
+            
+    <a style=" text-decoration: none; " href="{% url 'play_blog' blog.id %}"><video src="{{blog.video.url}}"></video></a>
+    <div >
+        <h5>Uploaded By {{blog.author_name}}</h5>
+        <h5>Upload Date {{blog.upload_date}}</h5>
+    </div>
 
-            <a style=" text-decoration: none; " href="{% url 'play_blog' blog.id %}"><video src="{{blog.video.url}}"></video></a>
         </div>
     </div>
     {%endfor%}
-    </ol>
+    
 </div>
 
 

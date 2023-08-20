@@ -1,12 +1,19 @@
 {%extends 'base.html'%}
 
 {%block body%}
-<div class="container">
+<img src="/static/guide.jpg"  class="img-fluid" alt="Background Image" style="width:100vw;height:90vh;filter: blur(3px);">
+
+<div class="container" style="
+position: absolute;
+top: 120px;
+left:25vw;
+font-size:large;
+color:  black;font-style: italic;">
     <form action="" method="post" class="w-50 d-flex flex-column justify-content-center" enctype="multipart/form-data">
         {{forms.errors}}
         {%csrf_token%}
         {{form.as_p}}
-        <button type="submit" class="btn btn-warning btn-md w-25"> Rgister </button>
+        <button type="submit" class="btn btn-info btn-md w-25"> Rgister </button>
     </form>
 </div>
 {%endblock body%}

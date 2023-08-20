@@ -1,7 +1,15 @@
 {%extends 'base.html'%}
 
 {%block body%}
-<div class="container d-flex flex-column justify-content-center">
+
+<img src="/static/book.jpg"  class="img-fluid" alt="Background Image" style="width:100vw;height:90vh;filter: blur(3px);">
+
+<div class="container d-flex flex-column justify-content-center col-md-8" style="
+position: absolute;
+top: 140px;
+left:15vw;
+font-size:large;
+color:  crimson;font-style: italic;">
     {%if messages%}
     {%for message in messages%}
     <h1 class="bg-{{message.tags}} w-100">{{message}}</h1>

@@ -1,10 +1,20 @@
 {% extends 'base.html' %}
 {% block body %}
-<div class="container">
+<img src="/static/review.jpg"  class="img-fluid" alt="Background Image" style="width:100vw;height:90vh;filter: blur(3px);">
+
+<h2 style="
+position: absolute;
+top: 80px;
+left:28vw;
+
+color:  dark;font-style: italic;"> YOUR REVIEW IS IMPORTANT TO US </h2>
+<div class="container" style="
+position: absolute;
+top: 130px; left:10vw;">
     <form action="" method="post">
         {%csrf_token%}
         {{form.as_p}}
-        <button type="submit" class="btn btn-success btn-lg my-3" >Submit</button>
+        <button type="submit" class="btn btn-info btn-lg my-3" >Submit</button>
     </form>
 </div>
     
