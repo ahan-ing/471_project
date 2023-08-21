@@ -116,7 +116,7 @@
     $("#search-input").autocomplete({
       source: function (request, response) {
         $.ajax({
-          url: "{% url 'autocomplete' %}",
+          url: "#",
           data: {
             term: request.term
           },

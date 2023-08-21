@@ -13,7 +13,7 @@ urlpatterns = [
     path('homepage',views.index,name='homepage'),
     path('logout',views.logoutpg,name='logout'),
     
-    path('autocomplete/', views.autocomplete, name='autocomplete'),
+    #path('autocomplete/', views.autocomplete, name='autocomplete'),
     
     
     path('guide/register', views.guide_register, name = 'guide_register'),

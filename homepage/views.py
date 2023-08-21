@@ -10,37 +10,7 @@ from django.http import JsonResponse
 import datetime
 
 
-def autocomplete(request):
-    term = request.GET.get('term', '')
 
-    suggestions = {
-        'Barishal': '/barishal',
-        'Dhaka': '/dhaka',
-        'Barishal city': '/barishal-city',
-        'Pirojpur': '/pirojpur',
-        'Kuakata': '/kuakata',
-        'Bhola': '/bhola',
-        'Jhalakathi': '/jhalakathi',
-        'Patuakhali': '/patuakhali',
-        'Mymensingh': '/mymensingh',
-        'Sylhet': '/sylhet',
-        'Rajshahi': '/rajshahi',
-        'Chittagong': '/chittagong',
-        'Rangpur': '/rangpur',
-        'Khulna': '/khulna',
-        'Pyraband': '/pyraband',
-    }
-
-    results = []
-    for suggestion, url in suggestions.items():
-        if term.lower() in suggestion.lower():
-            results.append({'label': suggestion, 'value': url})
-
-    data = {
-        'results': results
-    }
-
-    return JsonResponse(data)
 
 
 def search(request):
