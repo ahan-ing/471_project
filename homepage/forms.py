@@ -56,7 +56,7 @@ class AddPackageForm(forms.ModelForm):
             'source':forms.TextInput(attrs={'class':'form-control'}),
             'destination':forms.TextInput(attrs={'class':'form-control'}),
             'plan':forms.Textarea(attrs={'class':'form-control', 'placeholder':'Enter Your Plan'}),
-            'terms':forms.Textarea(attrs={'class':'form-control', 'placeholder':'Enter Your Plan'}),
+            'terms':forms.Textarea(attrs={'class':'form-control', 'placeholder':'Enter Terms and Conditions'}),
             'place':forms.Select(attrs={'class':'form-control'}),
             'price':forms.NumberInput(attrs={'class':'form-control'})
         }
